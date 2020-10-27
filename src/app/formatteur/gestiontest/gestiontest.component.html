@@ -1,0 +1,404 @@
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex  align-items-center">
+
+            <!-- Registration form -->
+            <div  class="flex-fill"  *ngIf="etape1">
+                <div class="row">
+                    <div  style="width: 800px; margin: 20px 50px">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h5 class="mb-0">Pour acceder au test</h5>
+                                    <span class="d-block text-muted">slectionner une formation </span>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                   
+                                       <select  class="form-control"  [(ngModel)]="formation">
+                                            <option *ngFor="let f of formations" [ngValue]="f.id" > {{f.titre}} </option>
+                                       </select> 
+
+                                </div>
+                 
+                            
+
+                                <button (click)="chercher()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"> Voir test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /registration form -->
+
+
+
+
+
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>
+
+
+
+
+
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+
+
+
+               <!-- Registration form -->
+               <div  class="flex-fill "  *ngIf="etape2">
+                <div class="row">
+                    <div  style="width: 800px;margin: 5px 50px;">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3 row">
+                                    <h5 class="mb-0 ml-3">Liste des test de cette formation</h5>
+                                     <button (click)="newtest()" type="submit" class="ml-auto mr-2 btn bg-teal-400 btn-labeled btn-labeled-right"> new test</button>
+                                   
+                                </div>
+
+
+
+                                <table class="table">
+
+                                    <tr>
+                                        <th>#</th>
+                                        <th>titre</th>
+                                        <th>action</th>
+
+
+
+                                    </tr>
+
+
+                                    <tr *ngFor="let q of tests">
+
+                                        <td>{{q.id}}</td>
+                                        <td>{{q.titre}}</td>
+                                        <td><button (click)="voirDetailtest(q.id); idtestDeatil = q.id" class="btn btn-outline-info">Voir Test</button>
+                                        
+                                        <button (click)="deletetest(q.id)" class="btn btn-danger">delete</button>
+                                        
+                                        </td>
+
+
+
+                                    </tr>
+
+
+
+                                </table>
+
+
+
+
+                 
+                            
+
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /registration form -->
+
+
+
+
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>
+
+
+
+
+
+
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+
+
+
+               <!-- Registration form -->
+               <div  class="flex-fill "  *ngIf="etape3">
+                <div class="row">
+                    <div  style="width: 800px;margin: 5px 50px;">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h5 class="mb-0 ml-3">Create New test</h5>
+                                </div>
+
+
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                    <input type="text" class="form-control" [(ngModel)]="test.titre" placeholder="titre">
+                                  
+                                </div>
+
+
+                            
+                                <button (click)="ajout()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create test</button>
+
+
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /registration form -->
+
+
+
+
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>
+
+
+
+
+
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+
+
+
+               <!-- Registration form -->
+               <div  class="flex-fill "  *ngIf="etape4">
+                <div class="row">
+                    <div  style="width: 800px;margin: 5px 50px;">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h5 class="mb-0 ml-3">test detail</h5>
+                                    <h6 class="mb-0 ml-3">{{detailtest.titre}}</h6>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="text" [(ngModel)]="question.text" class="form-control" placeholder="question">
+                                          
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                           
+                                            <select [(ngModel)]="question.reponse"  name="" id="" class="form-control">
+
+                                                <option [ngValue]="'a'">A</option>
+                                                <option [ngValue]="'b'">B</option>
+                                                <option [ngValue]="'c'">C</option>
+                                                <option [ngValue]="'d'">D</option>
+                                                <option [ngValue]="'e'">E</option>
+
+
+                                            </select>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                        <p>Ajouter des options</p>
+
+
+
+
+                                <ul>
+                                    <li *ngFor="let op of arrayOfOption" > {{op.titre}}-{{op.text}}     </li>
+                                </ul>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                   
+                                    <select [(ngModel)]="option.titre"  name="" id="" class="form-control">
+
+                                        <option [ngValue]="'a'">A</option>
+                                        <option [ngValue]="'b'">B</option>
+                                        <option [ngValue]="'c'">C</option>
+                                        <option [ngValue]="'d'">D</option>
+                                        <option [ngValue]="'e'">E</option>
+
+
+                                    </select>
+
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                    <input type="text" [(ngModel)]="option.text" class="form-control" placeholder="option">
+                                  
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+
+                                
+                                <button (click)="ajoutOption()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> add option</button>
+
+
+                            </div>
+                          
+                        </div>
+
+                            
+
+
+
+                                <button (click)="ajoutQuestion()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> enregistre le question</button>
+
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /registration form -->
+
+
+
+
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>
+
+
+
+
+
+
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+
+
+
+               <!-- Registration form -->
+               <div  class="flex-fill "  *ngIf="etape4">
+                <div class="row">
+                    <div  style="width: 800px;margin: 5px 50px;">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h5 class="mb-0 ml-3">test detail</h5>
+                                    <h6 class="mb-0 ml-3">{{detailtest.titre}}</h6>
+
+                                </div>
+
+
+
+
+
+
+                                <div *ngFor="let q of testQuestion">
+
+                                    <h1>Q - {{q.text}}</h1>
+
+
+                                    <div  *ngFor="let o of allOption">
+                                        <p [ngClass]="{' text-success ' : q.reponse == o.titre}" *ngIf="q.id == o.question" > {{o.titre}} -  {{o.text}}</p>
+
+                                    </div>
+
+                                 
+
+                                </div>
+
+
+
+
+
+
+
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>

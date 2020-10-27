@@ -1,0 +1,73 @@
+
+
+<div class="container">
+
+
+
+    <div class="row m-5">
+
+            <h1 class="lead">
+                Gestion des categories
+            </h1>
+
+
+
+            <div class="row">
+
+                 	<!-- Extra large table -->
+				<div class="card " style="width: 1000px;">
+					<div class="card-header header-elements-inline">
+						<h5 class="card-title">Extra large table</h5>
+						<div class="header-elements">
+							<div class="list-icons">
+		                		<a routerLink="/board/addcategorie" class="btn btn-dark text-white" >Add</a>
+		                	
+		                	</div>
+	                	</div>
+					</div>
+
+				
+
+					<div class="table-responsive">
+						<table class="table table-xl">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>titre</th>
+								
+									<th>Action</th>
+                                    
+                                    
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let f of categories;let i=index">
+                                    <td>{{f.id}}</td>
+                                    <td>{{f.titre}}</td>
+									
+                                    
+                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                        <button (click)="upt = true; index = i" class="btn btn-info">Update</button>
+                                    
+                                    </td>
+
+                                    <td *ngIf="upt && index == i">   <input [(ngModel)]="cat.titre"> <button class="btn btn-dark" (click)="update(f.id)">update</button>   </td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /extra large table -->   
+
+
+            </div>
+
+
+
+    </div>
+
+
+
+
+</div>

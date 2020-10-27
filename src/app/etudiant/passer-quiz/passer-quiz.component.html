@@ -1,0 +1,107 @@
+
+
+
+
+<div class="container">
+
+
+
+    <div class="m-4 card p-4" style="width: 1000px;">
+
+        <h1>{{quiz?.titre}}</h1>
+        <h5>{{quiz?.description}}</h5>
+
+
+
+        <div *ngFor="let q of questions;let i = index">
+
+            <h1>Q{{i+1}} - {{q?.text}}</h1>
+    
+           <div *ngFor="let o of options" >
+                <p *ngIf="o.question == q.id">
+                    <input type="radio" [name]="q.id" (click)="updateScore(q.reponse, o.titre)">
+                    {{o?.titre}} - {{o.text}}</p>
+           </div>
+    
+        </div>
+
+
+
+
+
+        
+
+        <button (click)="envoyer()" class="btn btn-primary btn-block mt-5">Envoyer</button>
+    </div>
+
+
+
+
+
+  
+
+<!-- Page content -->
+<div class="page-content" style="width: 1000px;">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+
+
+
+               <!-- Registration form -->
+               <div  class="flex-fill "  *ngIf="etape4">
+                <div class="row">
+                    <div  style="width: 800px;margin: 5px 50px;">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h5 class="mb-0 ml-3">Quiz detail</h5>
+                                    <h6 class="mb-0 ml-3">{{quiz.titre}}</h6>
+
+                                </div>
+
+
+
+
+
+
+                                <div *ngFor="let q of questions">
+
+                                    <h1>Q - {{q.text}}</h1>
+
+
+                                    <div  *ngFor="let o of options">
+                                        <p [ngClass]="{' text-success ' : q.reponse == o.titre}" *ngIf="q.id == o.question" > {{o.titre}} -  {{o.text}}</p>
+
+                                    </div>
+
+                                 
+
+                                </div>
+
+
+
+
+
+
+
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>
+
+</div>
+
+
+
+

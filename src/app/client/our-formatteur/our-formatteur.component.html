@@ -1,0 +1,30 @@
+<div class="team-area pt-160 pb-160 section-bg" data-background="assets/img/gallery/section_bg02.png">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="cl-xl-7 col-lg-8 col-md-10">
+                <!-- Section Tittle -->
+                <div class="section-tittle section-tittle2 text-center mb-70">
+                    <span>More About Our Faculty</span>
+                    <h2>Our Best Teachers</h2>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let f of formatteurs" class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-team mb-30">
+                    <div class="team-img" style="height: 200px;">
+                        <img  [src]="'http://127.0.0.1/portfolio/assets/'+ f.photo" alt="">
+                        <!-- Blog Social -->
+                    
+                    </div>
+                    <div class="team-caption">
+                        <h3><a>{{f.name }} {{f.lastname}}</a></h3>
+                        <p>Faculty</p>
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+       
+    </div>
+</div>

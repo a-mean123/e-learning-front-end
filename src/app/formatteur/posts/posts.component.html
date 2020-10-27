@@ -1,0 +1,47 @@
+
+
+<div class="container">
+
+
+
+
+    <h1 class="m-4 lead">Resultats des tests passés par les etudiant</h1>
+
+
+
+    <table class="table m-4" style="width: 900px;" >
+
+
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>lastname</th>
+                <th>test/quiz</th>
+                <th>score</th>
+                <th>action</th>
+            </tr>
+
+        </thead>
+
+
+
+        <tbody>
+
+            <tr *ngFor="let p of posts">
+
+                <td>{{p.name}}</td>
+                <td>{{p.lastname}}</td>
+                <td>{{p.test}}</td>
+                <td>{{p.score}} / 20</td>
+                <td>
+                <button (click)="delete(p.id)" class="btn btn-danger bg-danger">delete</button>    
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+</div>

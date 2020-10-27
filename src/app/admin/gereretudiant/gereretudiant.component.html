@@ -1,0 +1,79 @@
+
+
+<div class="container">
+
+
+
+    <div class="row m-5">
+
+            <h1 class="lead">
+                Gestion des formatteurs
+            </h1>
+
+
+
+            <div class="row">
+
+                 	<!-- Extra large table -->
+				<div class="card " style="width: 1000px;">
+					<div class="card-header header-elements-inline">
+						<h5 class="card-title">Extra large table</h5>
+						<div class="header-elements">
+							<div class="list-icons">
+		                		<a routerLink="/board/addformatteur" class="btn btn-dark text-white" >Add</a>
+		                	
+		                	</div>
+	                	</div>
+					</div>
+
+				
+
+					<div class="table-responsive">
+						<table class="table table-xl">
+							<thead>
+								<tr>
+									<th>Photo</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Adress</th>
+									<th>Phone</th>
+									<th>Action</th>
+                                    
+                                    
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let f of etudiant">
+									<td><img [src]="'http://127.0.0.1/portfolio/assets/'+ f.photo"  alt="" style="width: 60px;"></td>
+									<td>{{f.name}}</td>
+									<td>{{f.lastname}}</td>
+                                    <td>{{f.email}}</td>
+									<td>{{f.adress}}</td>
+									<td>{{f.phone}}</td>
+                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                    
+                                        <button (click)="enable(f.id, 1)" *ngIf="f.enable == 1" class="btn btn-outline-success mx-2">Disable</button>
+                                        <button (click)="enable(f.id, 0)" *ngIf="f.enable == 0" class="btn btn-outline-info mx-2">Enable</button>
+
+                                    
+                                    </td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /extra large table -->   
+
+
+            </div>
+
+
+
+    </div>
+
+
+
+
+</div>

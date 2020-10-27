@@ -1,0 +1,67 @@
+
+
+    <!-- Content area -->
+    <div class="content">
+   
+
+        <!-- Inner container -->
+        <div class="d-flex align-items-start flex-column flex-md-row">
+
+
+            
+        
+            <!-- Left content -->
+            <div class=" order-2 order-md-1" style="width: 900px;">
+
+                <!-- Vertical cards -->
+                <div class="row">
+                    <div *ngFor="let f of formations" class="col-lg-4" style="height: 500px;">
+                        <div class="card">
+                            <div class="card-img-actions mx-1 mt-1" style="height: 250px;">
+                                <a href="#course_preview" data-toggle="modal" >
+                                    <img style="height: 100%;"    [src]="'http://127.0.0.1/portfolio/assets/'+ f.image" class="img-fluid card-img" alt="">
+                                    <span class="card-img-actions-overlay card-img"><i class="icon-play3 icon-2x"></i></span>
+                                </a>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <h6 class="d-flex font-weight-semibold flex-nowrap mb-0">
+                                        <a href="#" class="text-default mr-2">{{f.titre}}</a>
+                                     
+                                    </h6>
+
+                                    <ul class="list-inline list-inline-dotted text-muted mb-0">
+                                      
+                                        <li class="list-inline-item">{{f.date}}</li>
+                                    </ul>
+                                </div>
+
+                               {{f.description}}
+                            </div>
+
+                            <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
+                                <ul class="list-inline list-inline-dotted mb-0">
+                                   
+                                    <li class="list-inline-item"><i class="icon-alarm mr-2"></i> {{f.duree}} hours</li>
+                                </ul>
+
+                                <div class="mt-2 mt-sm-0">
+                                   
+                                    <button  [routerLink]="['/etudiant/detailformation' , f.id]"   class="btn btn-dark" >Voir</button>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                </div>
+
+           
+
+
+
+            </div>
+            <!-- /left content -->
+

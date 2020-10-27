@@ -1,0 +1,41 @@
+
+
+
+
+<div class="container">
+
+
+
+    <div class="m-4 card p-4" style="width: 1000px;">
+
+        <h1>{{test?.titre}}</h1>
+
+
+
+
+        <div *ngFor="let q of questions;let i = index">
+
+            <h1>Q{{i+1}} - {{q?.text}}</h1>
+    
+           <div *ngFor="let o of options" >
+                <p *ngIf="o.question == q.id">
+                    <input type="radio" [name]="q.id" (click)="updateScore(q.reponse, o.titre)">
+                    {{o?.titre}} - {{o.text}}</p>
+           </div>
+    
+        </div>
+
+
+        <h1 *ngIf="showScore" class="score">{{score }} / 20</h1>
+
+
+        <button (click)="envoyer()" class="btn btn-primary btn-block mt-5">Envoyer</button>
+    </div>
+
+
+
+
+
+  
+
+</div>

@@ -1,0 +1,76 @@
+
+
+<div class="container">
+
+
+
+    <div class="row m-5">
+
+            <h1 class="lead">
+                Gestion des formations
+            </h1>
+
+
+
+            <div class="row">
+
+                 	<!-- Extra large table -->
+				<div class="card " style="width: 1000px;">
+					<div class="card-header header-elements-inline">
+						<h5 class="card-title">Extra large table</h5>
+						<div class="header-elements">
+							<div class="list-icons">
+		                		<a routerLink="/board/ajoutformation" class="btn btn-dark text-white" >Add</a>
+		                	
+		                	</div>
+	                	</div>
+					</div>
+
+				
+
+					<div class="table-responsive">
+						<table class="table table-xl">
+							<thead>
+								<tr>
+									<th>Photo</th>
+									<th>titre</th>
+									<th>date</th>
+                                    <th>duree</th>
+                                    <th>etat</th>
+									<th>Categorie</th>
+									<th>Action</th>
+                                    
+                                    
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let f of formations">
+									<td><img [src]="'http://127.0.0.1/portfolio/assets/'+ f.image"  alt="" style="width: 60px;"></td>
+									<td>{{f.titre}}</td>
+									<td>{{f.date}}</td>
+                                    <td>{{f.duree}}</td>
+									<td>{{f.etat}}</td>
+									<td>{{f.categorie}}</td>
+                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                    
+                                     <a [routerLink]="[ '/board/updateformation', f.id ]" class="btn btn-info"> Update</a> 
+                                    </td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /extra large table -->   
+
+
+            </div>
+
+
+
+    </div>
+
+
+
+
+</div>

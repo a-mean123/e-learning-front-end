@@ -1,0 +1,62 @@
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+            <!-- Registration form -->
+            <div  class="flex-fill" >
+                <div class="row">
+                    <div  style="width: 800px; margin: 50px;">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h5 class="mb-0">Update cours</h5>
+                                    <span class="d-block text-muted">All fields are required</span>
+                                </div>
+
+
+                                <div *ngIf="alert" class=" my-3  alert bg-success text-white alert-styled-left alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Well done!</span> ADD with success.
+							    </div>
+
+
+
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                    <input type="text" class="form-control" [(ngModel)]="cours.titre" placeholder="titre">
+                                  
+                                </div>
+
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                    <input type="date" class="form-control" [(ngModel)]="cours.date" placeholder="date">
+                                  
+                                </div>
+
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                    <input #fileInput type="file" class="form-control">
+                                  
+                                </div>
+
+                            
+
+                                <button (click)="register()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /registration form -->
+
+        </div>
+        <!-- /content area -->
+
+
+    
+    </div>
+    <!-- /main content -->
+
+</div>

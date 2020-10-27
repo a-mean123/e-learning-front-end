@@ -1,0 +1,73 @@
+
+
+<div class="container">
+
+
+
+    <div class="row m-5">
+
+            <h1 class="lead">
+                Gestion des cours
+            </h1>
+
+
+
+            <div class="row">
+
+                 	<!-- Extra large table -->
+				<div class="card " style="width: 1000px;">
+					<div class="card-header header-elements-inline">
+						<h5 class="card-title">Extra large table</h5>
+						<div *ngIf="user.Role == 'prof'" class="header-elements">
+							<div class="list-icons">
+		                		<a routerLink="/formatteur/ajoutcours" class="btn btn-dark text-white" >Add</a>
+		                	
+		                	</div>
+	                	</div>
+					</div>
+
+				
+
+					<div class="table-responsive">
+						<table class="table table-xl">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>titre</th>
+									<th>date</th>
+                                    <th>file</th>
+									<th>Action</th>
+                                    
+                                    
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let f of cours">
+									<td>{{f.id}}</td>
+									<td>{{f.titre}}</td>
+                                    <td>{{f.date}}</td>
+									<td><a [href]="'http://127.0.0.1/portfolio/assets/cours/'+ f.fichier" target="_blank" class="btn btn-outline-info">show</a></td>
+									
+                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                    
+                                     <a [routerLink]="[ '/formatteur/updatecours', f.id ]" class="btn btn-info" *ngIf="user.Role == 'prof'">  Update</a> 
+                                    </td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /extra large table -->   
+
+
+            </div>
+
+
+
+    </div>
+
+
+
+
+</div>

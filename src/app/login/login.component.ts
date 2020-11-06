@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  alert1 = false;
 
   loginUser() {
     console.log(this.loginUserData);
@@ -43,7 +44,12 @@ export class LoginComponent implements OnInit {
 
      
       },
-      err => console.log(err)
+      err => {
+        this.alert1 = true;
+        setTimeout(() => {
+          this.alert1 = false;
+        }, 3000);
+      }
     )
   }
 

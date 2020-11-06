@@ -135,9 +135,7 @@
 			                		</div>
 								</div>
 
-								<div class="card-body pb-0">
-									<a (click)="voirCours = true" class="btn bg-teal-400 btn-block mb-2">Voir cours</a>
-                                </div>
+
                                 
                                 <div class="card-body pb-0"  *ngFor="let q of quizs; let i = index"  >
 									<a [routerLink]="['/etudiant/passerquiz' , q.id]" class="btn bg-teal-400 btn-block mb-2">Passer quiz {{i+1}}</a>

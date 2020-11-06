@@ -16,9 +16,22 @@ export class ListFormationsComponent implements OnInit {
   user: any;
 
 alert = false;
+
+appFormation: any;
   ngOnInit(): void {
     this.user = this._auth.getUserData();
   
+    this._auth.getUserFormation(this.user.id).subscribe(
+      res=>{
+        this.appFormation = res;
+      
+        
+      },
+      err=>{
+        console.log(err);
+        
+      }
+    );
     
     this._auth.getAllFormation().subscribe(
       res=>{
@@ -29,6 +42,19 @@ alert = false;
     );
   
   }
+
+
+
+  getDimensions(id) {
+    var obj = this.appFormation.filter(function(node) {
+        return node.id==id;
+    });
+    
+    return obj[0]?.id;
+ 
+       
+}
+
 
 
 

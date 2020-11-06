@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
 
 
 alert = false;
+alert1 = false;
 
   user = {
 
@@ -51,9 +52,15 @@ alert = false;
 
       res=>{
         console.log(res);
-        this.alert = true;
+       
+        if(res == 0){
+          this.alert1 = true;
+        }else{
+          this.alert = true;
+        }
         setTimeout(() => {
             this.alert = false;
+            this.alert1 = false;
         }, 3000);
         
       },

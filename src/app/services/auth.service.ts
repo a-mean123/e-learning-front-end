@@ -259,6 +259,11 @@ detailFormation(id:any){
   return this.http.get<any>(this.urlFormation + 'detail&id=' + id);
 }
 
+getFormationByCategorie(cat:any){
+
+  return this.http.get<any>(this.urlFormation + 'getFormationByCategorie&categorie=' + cat);
+}
+
 
 updateFormation(c: any , id: any){
 

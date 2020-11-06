@@ -31,6 +31,7 @@ import { PasserQuizComponent } from './etudiant/passer-quiz/passer-quiz.componen
 import { PasserTestComponent } from './etudiant/passer-test/passer-test.component';
 import { DashComponent } from './formatteur/dash/dash.component';
 import { PostsComponent } from './formatteur/posts/posts.component';
+import { MesFormationComponent } from './formatteur/mes-formation/mes-formation.component';
 
 const routes: Routes = [
 
@@ -59,7 +60,11 @@ const routes: Routes = [
       {path: 'updatecours/:id' , component: UpdatecoursComponent},
       {path: 'gestionquiz' , component: GestionquizComponent},
       {path: 'gestiontest' , component: GestiontestComponent},
-      {path: 'posts' , component: PostsComponent}
+      {path: 'posts' , component: PostsComponent},
+      {path: 'detailformation/:id' , component: DetailFormationsComponent},
+      {path: 'mesformation' , component: MesFormationComponent},
+
+
 
     ]},
 

@@ -49,6 +49,7 @@ import { OurFormatteurComponent } from './client/our-formatteur/our-formatteur.c
 import { AboutUsComponent } from './client/about-us/about-us.component';
 import { DashComponent } from './formatteur/dash/dash.component';
 import { PostsComponent } from './formatteur/posts/posts.component';
+import { MesFormationComponent } from './formatteur/mes-formation/mes-formation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +95,8 @@ import { PostsComponent } from './formatteur/posts/posts.component';
     OurFormatteurComponent,
     AboutUsComponent,
     DashComponent,
-    PostsComponent
+    PostsComponent,
+    MesFormationComponent
   ],
   imports: [
     BrowserModule,

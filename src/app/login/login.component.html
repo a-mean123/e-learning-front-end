@@ -4,10 +4,14 @@
 
 		<!-- Main content -->
 		<div class="content-wrapper">
+			<div *ngIf="alert1" class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+				<span class="font-weight-semibold">Erreur!</span> login ou password incorrect <a href="#" class="alert-link"></a>
+			</div>
 
 			<!-- Content area -->
 			<div class="content d-flex justify-content-center align-items-center">
-
+				
 				<!-- Login form -->
 				<div class="login-form" action="http://demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/index.html">
 					<div class="card mb-0">
@@ -33,9 +37,11 @@
 							</div>
 
 							<div class="form-group">
-								<button (click)="loginUser()" type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>
+								<button (click)="loginUser()" type="submit" class="btn bg-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>
 							</div>
-
+							<div class="form-group">
+								<button type="submit" class="btn bg-success btn-block" routerLink="/register">Create account <i class="icon-circle-right2 ml-2"></i></button>
+							</div>
 						
 						</div>
 					</div>

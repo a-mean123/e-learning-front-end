@@ -2,11 +2,7 @@
 
     <!-- Content area -->
     <div class="content">
-        <div *ngIf="alert" class=" my-3  alert bg-success text-white alert-styled-left alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-            <span class="font-weight-semibold">Well done!</span> inscrir with success.
-        </div>
-
+      
         <!-- Inner container -->
         <div class="d-flex align-items-start flex-column flex-md-row">
 
@@ -51,8 +47,7 @@
 
                                 <div class="mt-2 mt-sm-0">
                                    
-                                    <button *ngIf="!getDimensions(f.id)" (click)="inscrir(f.id)" class="btn btn-dark" [disabled]="f.etat == '1' && user.enable == '0'  ">Inscrir</button>
-                                    <button *ngIf="getDimensions(f.id)"  class="btn btn-dark" [disabled]="f.etat == '1' && user.enable == '0'  "  [routerLink]="['/etudiant/detailformation' , f.id]" >Voir Cours</button>
+                                    <button  class="btn btn-dark"  [routerLink]="['/formatteur/detailformation' , f.id]" >Voir Cours</button>
                                   
                                 </div>
                             </div>

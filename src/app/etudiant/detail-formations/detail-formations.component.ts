@@ -33,7 +33,7 @@ export class DetailFormationsComponent implements OnInit {
   comments: any;
 
 
-  voirCours= false;
+  voirCours= true;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
